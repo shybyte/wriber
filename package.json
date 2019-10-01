@@ -1,0 +1,17 @@
+{
+  "name": "wriber",
+  "version": "0.1.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "start": "parcel src/index.html"
+  },
+  "author": "Marco Stahl",
+  "license": "AGPL",
+  "dependencies": {
+    "parcel-bundler": "^1.12.3"
+  },
+  "devDependencies": {
+    "typescript": "^3.6.3"
+  }
+}
