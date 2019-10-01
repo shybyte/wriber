@@ -1,7 +1,7 @@
 {
   "name": "wriber",
   "version": "0.1.0",
-  "description": "",
+  "description": "An online editor for Wribe",
   "private": true,
   "scripts": {
     "start": "parcel src/index.html"
