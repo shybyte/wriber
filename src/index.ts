@@ -32,3 +32,11 @@ acrolinxPlugin.registerAdapter(new acrolinxSdk.CodeMirrorAdapter({
   format: 'TEXT'
 }));
 acrolinxPlugin.init();
+
+const currentUrl = new URL(location.href);
+if (currentUrl.searchParams) {
+  const text = currentUrl.searchParams.get('text');
+  if (text) {
+    codeMirror.setValue(text)
+  }
+}
