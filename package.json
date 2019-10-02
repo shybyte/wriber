@@ -9,6 +9,7 @@
   "author": "Marco Stahl",
   "license": "AGPL",
   "dependencies": {
+    "@acrolinx/sidebar-sdk": "^0.4.44",
     "@types/codemirror": "0.0.77",
     "codemirror": "^5.49.0",
     "parcel-bundler": "^1.12.3"
