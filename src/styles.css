@@ -1,0 +1,23 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#codemirrorContainer {
+  flex: 1;
+}
+
+#sidebar {
+  border-left: 1px solid #aaa;
+  width: 300px;
+}
+
+.CodeMirror { height: 100%; }
+.CodeMirror pre.CodeMirror-placeholder { color: #999; }
