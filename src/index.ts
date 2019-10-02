@@ -4,6 +4,9 @@ import 'codemirror/mode/javascript/javascript.js';
 import 'codemirror/mode/htmlmixed/htmlmixed';
 import 'codemirror/addon/display/placeholder.js';
 
+const CLIENT_SIGNATURE = 'SW50ZWdyYXRpb25EZXZlbG9wbWVudERlbW9Pbmx5';
+const currentUrl = new URL(location.href);
+
 const codeMirror = CodeMirror(document.getElementById('codemirrorContainer')!, {
   lineNumbers: true,
   placeholder: 'Type here!',
@@ -12,11 +15,13 @@ const codeMirror = CodeMirror(document.getElementById('codemirrorContainer')!, {
 
 codeMirror.focus();
 
-const CLIENT_SIGNATURE = 'SW50ZWdyYXRpb25EZXZlbG9wbWVudERlbW9Pbmx5';
+const useLocalApiAndSidebar = currentUrl.pathname && currentUrl.pathname.indexOf('wriber') > 0;
 
 const acrolinxPlugin = new acrolinxSdk.AcrolinxPlugin({
   sidebarContainerId: 'sidebarContainer',
   clientSignature: CLIENT_SIGNATURE,
+  sidebarUrl: useLocalApiAndSidebar ? '/sidebar/v14/' : undefined,
+  serverAddress: useLocalApiAndSidebar ? '/' : undefined,
   clientComponents: [
     {
       id: 'wriber',
@@ -33,7 +38,6 @@ acrolinxPlugin.registerAdapter(new acrolinxSdk.CodeMirrorAdapter({
 }));
 acrolinxPlugin.init();
 
-const currentUrl = new URL(location.href);
 if (currentUrl.searchParams) {
   const text = currentUrl.searchParams.get('text');
   if (text) {
