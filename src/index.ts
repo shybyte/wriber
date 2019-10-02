@@ -27,5 +27,8 @@ const acrolinxPlugin = new acrolinxSdk.AcrolinxPlugin({
   ]
 });
 
-acrolinxPlugin.registerAdapter(new acrolinxSdk.CodeMirrorAdapter({editor: codeMirror}));
+acrolinxPlugin.registerAdapter(new acrolinxSdk.CodeMirrorAdapter({
+  editor: codeMirror,
+  format: 'TEXT'
+}));
 acrolinxPlugin.init();
